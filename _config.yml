@@ -1,0 +1,26 @@
+# Site settings
+title: Dr
+name: Nur
+surname: Ozyilmaz
+fulltitle: Dr Nur Ozyilmaz
+appname: DrNur
+email: info@drnur.co.uk
+tel: +44 (0) 7500 591817
+address: "Clinic Centre<br>Colebrooke House<br>10-12 Gaskin Street, Islington, London<br>N1 2RY"
+map: "https://www.google.co.uk/maps/place/London+N1+2RY/@51.5376558,-0.1028335,18.25z/data=!4m2!3m1!1s0x48761b6714d1ccf5:0x7776d1ab81a5148f"
+description: Dr Nur Ozyilmaz is a consultant paediatrician with a holistic approach to children's health and wellness.
+jobtitle: Consultant Paediatrician, London
+qualifications: MD MRCPCH
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://drnur.co.uk" # the base hostname & protocol for your site
+image: "https://drnur.co.uk/assets/img/nur.jpg"
+facebook: "https://www.facebook.com/drnurdanozyilmaz/"
+#contactaction: "https://postman-hmo.rhcloud.com/info@drnur.co.uk"
+contactaction: "https://postman-hmo.rhcloud.com/email@huseyin.org"
+
+# production/development
+mode: production
+# Build settings
+markdown: kramdown
+permalink: /posts/:title/

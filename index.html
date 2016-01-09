@@ -1,0 +1,209 @@
+---
+layout: default
+---
+
+<!-- ==== HEADERWRAP ==== -->
+<div id="headerwrap" itemscope itemtype="http://schema.org/Person">
+    <header class="clearfix" id="home">
+        <h1>
+            <span itemprop="honorificPrefix">{{site.title}} </span>
+            <span itemprop="givenName">{{site.name}} </span>
+            <span itemprop="familyName">{{site.surname}}</span>
+        </h1>
+        <h2 class="animated wow zoomIn" itemprop="jobTitle">{{site.jobtitle}}</h2>
+        <p itemprop="award">{{site.qualifications}}</p>
+        <p style="font-size:30px;margin:0"><span class="ion-ios-home-outline"></p>
+        <p>
+            <a href="{{site.map}}" itemprop="workLocation">{{site.address}}</a><br>
+            <span itemprop="telephone">{{site.tel}}</span><br>
+            <a href="mailto:{{ site.email }}" itemprop="email">{{ site.email }}</a>
+        </p>
+    </header>       
+</div><!-- /headerwrap -->
+
+<!-- ==== GREYWRAP ==== -->
+<div id="greywrap">
+    <div class="row">
+        <div class="col-lg-4 callout animated wow zoomIn">
+            <span class="icon ion-shuffle"></span>
+            <h2>Multi-disciplinary</h2>
+            <p>Developed a multi-disciplinary, holistic approach that uses Western medicine, traditional and laser acupuncture, functional medicine, Bioresonance, nutritional and herbal remedies</p>
+        </div>
+            
+        <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".2s">
+            <span class="icon ion-radio-waves"></span>
+            <h2>Bioresonance</h2>
+            <p>Offers comprehensive, effective, non-invasive and safe energy therapies that help the body rebalance its systems with the body's own oscillations by using the latest technology</p>
+        </div>
+        
+        <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".4s">
+            <span class="icon ion-heart"></span>
+            <h2>Nutrition</h2>
+            <p>Carries out detailed individual nutritional assessments, advices and supports her patients in their transition to a more balanced and tailored nutritional plan</p>
+        </div>
+    </div><!-- row -->
+</div><!-- greywrap -->
+    
+<!-- ==== ABOUT ==== -->
+<div class="container" id="about">
+    <div class="row white">
+        <h1 class="centered">ABOUT DR NUR</h1>
+        <hr><br>
+        <div class="col-lg-6">
+            {% include about.html %}
+        </div>
+        <div class="col-lg-6">
+            {% include about2.html %}
+        </div>
+    </div><!-- row -->
+</div><!-- ABOUT container -->
+    
+<!-- ==== SECTION DIVIDER1 -->
+<section class="section-divider textdivider textdivider-light divider1" id="experience">
+    <div class="container">
+        <div class="experience animated wow flipInX">
+            <h1>23</h1>
+            <p>years<br>in medicine</p>
+        </div>
+        <hr>
+        {% include experience.html %}
+    </div><!-- container -->
+</section><!-- section -->
+    
+    
+<!-- ==== Bioresonance ==== -->
+<div class="container" id="bioresonance">
+    <div class="row white">
+        <h1 class="centered">Bioresonance</h2>
+        <hr><br>
+        <div class="col-lg-offset-2 col-lg-8">
+            {% include bioresonance.html %}
+        </div>
+    </div>
+</div><!-- Bioresonance container -->
+    
+
+<!-- ==== SECTION DIVIDER2 -->
+<section class="section-divider textdivider divider2">
+    <div class="container diet" id="nutrition">
+        <h1>Optimise your nutrition for vibrant health</h1>
+        <hr>
+    </div>
+</section>
+
+<!-- ==== Nutrition ==== -->
+<div class="container">
+    <div class="row white">
+        <h1 class="centered">Nutrition</h2>
+        <hr><br>
+        <div class="col-lg-offset-2 col-lg-8">
+            {% include nutrition.html %}
+        </div>
+    </div>
+</div><!-- Nutrition container -->
+    
+<!-- ==== SECTION DIVIDER4 ==== -->
+<section class="section-divider textdivider divider4">
+    <div class="container">
+        <h1>HEALTY KIDS, HAPPY FAMILIES</h1>
+        <hr>
+    </div>
+</section>
+
+<!-- ==== Care ==== -->
+<div class="container" id="care">
+    <div class="row white">
+        <h1 class="centered">What to expect at Dr Nur's clinic</h2>
+        <hr><br>
+        <div class="col-lg-offset-2 col-lg-8">
+            {% include care.html %}
+        </div>
+    </div>
+</div><!-- Care container -->
+
+<!-- ==== SECTION DIVIDER5 ==== -->
+<section class="section-divider textdivider divider5" id="news">
+    <div class="container">
+        <h1>News &amp; Articles</h1>
+        <hr>
+    </div>
+</section>
+    
+<!-- ==== News & Articles ==== -->
+<div class="container">
+    <br><br>
+    <div class="row">
+        {% for post in site.posts %}
+        <div class="col-md-4 wow fadeInDown animated">
+            <div class="grid mask">
+                <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <figure>
+                    <img class="img-responsive" src="{{ post.image }}" alt="">
+                    <figcaption>
+                        <a href="{{ post.url }}" class="btn btn-primary btn-lg">Take a Look</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </div><!-- /col -->
+        {% endfor %}
+    </div><!-- /row -->
+</div><!-- /container -->
+
+    
+<!-- ==== SECTION DIVIDER6 ==== -->
+<section class="section-divider textdivider divider6">
+    <div class="container animated wow zoomInUp">
+        <h1>PRACTICE IN LONDON, UK</h1>
+        <hr>
+        <p>{{site.address}}</p>
+        <p>{{site.tel}}</p>
+        <p><a class="icon ion-ios-email" href="mailto:{{ site.email }}"></a> | <a class="icon ion-social-facebook" href="{{ site.facebook }}"></a></p>
+    </div>
+</section><!-- section -->
+    
+<div class="container" id="contact">
+    <div class="row" style="background-color:#f5f5f5;">
+        <h1 class="centered">THANKS FOR VISITING</h1>
+        <hr>
+        <div class="col-lg-offset-2 col-lg-4 contact-info" >
+            <h3>Contact Information</h3>
+            <br>
+            <p><span class="contact-icon ion-ios-home"></span><a href="{{site.map}}"> {{site.address}}</a></p>
+            <p><span class="contact-icon ion-ios-telephone"></span> {{site.tel}}</p>
+            <p><span class="contact-icon ion-ios-email"></span> <a href="mailto:{{ site.email }}"> {{ site.email }}</a></p>
+            <p><span class="contact-icon ion-social-facebook"></span> <a href="{{ site.facebook }}"> Dr Nur</a></p>
+        </div><!-- col -->
+        
+        <div class="col-lg-4">
+            <h3>Contact Me</h3>
+            <p>
+                <form id="contact-form" class="form-horizontal" role="form" action="{{ site.contactaction }}" method="POST">
+                    <div class="form-group">
+                        <label for="message" class="col-lg-4 control-label"></label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" id="message" name="message" required placeholder="Your Message" style="min-height:72px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyto" class="col-lg-4 control-label"></label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" id="replyto" required name="replyto" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname" class="col-lg-4 control-label"></label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="fullname" required name="fullname" placeholder="Your Name">
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <div class="col-lg-10">
+                            <button id="btn-submit" type="submit" class="btn btn-success">Send</button>
+                        </div>
+                    </div>
+                </form><!-- form -->
+            </p>
+        </div><!-- col -->
+    </div><!-- row -->
+</div><!-- container -->
