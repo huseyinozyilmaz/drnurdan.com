@@ -36,6 +36,7 @@ $(document).ready(function(){
                     type: "success",   
                     confirmButtonText: "OK"
                 });
+                $("#contact-form").trigger("reset");
             }
             else {
                 swal({
