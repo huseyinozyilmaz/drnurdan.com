@@ -16,6 +16,12 @@ $(document).ready(function(){
         }
     });
 
+    /**
+    $("#contact-form input[name=fullname]").val('John Smith');
+    $("#contact-form input[name=replyto]").val('john.smith@email.com');
+    $("#contact-form textarea[name=message]").val('This is a test contact message');
+    **/
+
     $("#contact-form").submit(function (e) {
         e.preventDefault();
     });
