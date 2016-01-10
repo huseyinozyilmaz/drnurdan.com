@@ -16,8 +16,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://drnur.co.uk" # the base hostname & protocol for your site
 image: "https://drnur.co.uk/assets/img/nur.jpg"
 facebook: "https://www.facebook.com/drnurdanozyilmaz/"
-#contactaction: "https://postman-hmo.rhcloud.com/info@drnur.co.uk"
-contactaction: "https://postman-hmo.rhcloud.com/email@huseyin.org"
+contactaction: "https://postman-hmo.rhcloud.com/info@drnur.co.uk"
 
 # production/development
 mode: production
