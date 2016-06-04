@@ -25,9 +25,10 @@ $(document).ready(function(){
     $("#contact-form").submit(function (e) {
         e.preventDefault();
     });
-    var action = $("#contact-form").attr("action");
-    var email  = action.substring(action.lastIndexOf("/") + 1, action.length);
+    
     $("#btn-submit").click(function (e) {
+        var action = $("#contact-form").attr("action");
+        var email  = action.substring(action.lastIndexOf("/") + 1, action.length);
         $.post( action, $( "#contact-form" ).serialize(), function(result) {
             if(result && result.success) {
                 swal({
