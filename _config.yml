@@ -15,7 +15,7 @@ qualifications: MD MRCPCH
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://drnur.co.uk" # the base hostname & protocol for your site
 image: "https://drnur.co.uk/assets/img/nur.jpg"
-facebook: "https://www.facebook.com/drnurdanozyilmaz/"
+facebook: "https://www.facebook.com/drnurozyilmaz/"
 contactaction: "https://postman-hmo.rhcloud.com/info@drnur.co.uk"
 
 # production/development
