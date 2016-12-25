@@ -504,6 +504,9 @@ a:after {
 .post-header {
     padding-top: 60px;
 }
+h3.post-title {
+    font-size: 20px;
+}
 .post-title {
     border-bottom: 1px solid #3498db;
     padding: 10px 0;
