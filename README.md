@@ -1,7 +1,10 @@
 # drnurdan.com
 
 Update all dependencies
-> sudo gem update github-pages
+```
+$ sudo gem update github-pages
+$ bundle update
+```
 
 > sudo gem install github-pages
 
