@@ -18,7 +18,7 @@ layout: default
             <span itemprop="telephone">{{site.tel}}</span><br>
             <a href="mailto:{{ site.email }}" itemprop="email">{{ site.email }}</a>
         </p>
-    </header>       
+    </header>
 </div><!-- /headerwrap -->
 
 <!-- ==== GREYWRAP ==== -->
@@ -29,13 +29,13 @@ layout: default
             <h2>Multi-disciplinary</h2>
             <p>Developed a multi-disciplinary, holistic approach that uses Western medicine, traditional and laser acupuncture, functional medicine, advanced bioregulatory therapy, nutritional and herbal remedies</p>
         </div>
-            
+
         <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".2s">
             <span class="icon ion-radio-waves"></span>
             <h2>Bioregulation Therapy</h2>
             <p>Offers comprehensive, effective, non-invasive and safe energy therapies that help the body rebalance its systems with the body's own oscillations by using the latest technology</p>
         </div>
-        
+
         <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".4s">
             <span class="icon ion-heart"></span>
             <h2>Nutrition</h2>
@@ -43,7 +43,7 @@ layout: default
         </div>
     </div><!-- row -->
 </div><!-- greywrap -->
-    
+
 <!-- ==== ABOUT ==== -->
 <div class="container" id="about">
     <div class="row white">
@@ -57,20 +57,20 @@ layout: default
         </div>
     </div><!-- row -->
 </div><!-- ABOUT container -->
-    
+
 <!-- ==== SECTION DIVIDER1 -->
 <section class="section-divider textdivider textdivider-light divider1" id="experience">
     <div class="container">
         <div class="experience animated wow flipInX">
-            <h1>23</h1>
+            <h1>{{ 'now' | date: "%Y" | minus:1995 }}</h1>
             <p>years<br>in medicine</p>
         </div>
         <hr>
         {% include experience.html %}
     </div><!-- container -->
 </section><!-- section -->
-    
-    
+
+
 <!-- ==== BRT ==== -->
 <div class="container" id="brt">
     <div class="row white">
@@ -82,7 +82,7 @@ layout: default
         </div>
     </div>
 </div><!-- BRT container -->
-    
+
 
 <!-- ==== SECTION DIVIDER2 -->
 <section class="section-divider textdivider divider2">
@@ -102,7 +102,7 @@ layout: default
         </div>
     </div>
 </div><!-- Nutrition container -->
-    
+
 <!-- ==== SECTION DIVIDER4 ==== -->
 <section class="section-divider textdivider divider4">
     <div class="container">
@@ -129,7 +129,7 @@ layout: default
         <hr>
     </div>
 </section>
-    
+
 <!-- ==== News & Articles ==== -->
 <div class="container">
     <br><br>
@@ -150,7 +150,7 @@ layout: default
     </div><!-- /row -->
 </div><!-- /container -->
 
-    
+
 <!-- ==== SECTION DIVIDER6 ==== -->
 <section class="section-divider textdivider divider6">
     <div class="container animated wow zoomInUp">
@@ -161,7 +161,7 @@ layout: default
         <p><a class="icon ion-ios-email" href="mailto:{{ site.email }}"></a> | <a class="icon ion-social-facebook" href="{{ site.facebook }}"></a></p>
     </div>
 </section><!-- section -->
-    
+
 <div class="container" id="contact">
     <div class="row" style="background-color:#f5f5f5;">
         <h1 class="centered">THANKS FOR VISITING</h1>
@@ -174,7 +174,7 @@ layout: default
             <p><span class="contact-icon ion-ios-email"></span> <a href="mailto:{{ site.email }}"> {{ site.email }}</a></p>
             <p><span class="contact-icon ion-social-facebook"></span> <a href="{{ site.facebook }}"> Dr Nur</a></p>
         </div><!-- col -->
-        
+
         <div class="col-lg-4">
             <h3>Contact Me</h3>
             <p>
@@ -197,7 +197,7 @@ layout: default
                             <input type="text" class="form-control" id="fullname" required name="fullname" placeholder="Your Name">
                         </div>
                     </div>
-                  
+
                     <div class="form-group">
                         <div class="col-lg-10">
                             <button id="btn-submit" type="submit" class="btn btn-success">Send</button>
