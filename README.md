@@ -1,12 +1,24 @@
 # drnurdan.com
 
-Update all dependencies
+## Updating Dependencies
+
 ```
-$ sudo gem update github-pages
-$ bundle update
+bundle update
+```
+If bundle update fails:
+```
+rvm --default use 2.4.2
+gem install bundler
 ```
 
-> sudo gem install github-pages
+## Running Local Jekyll Site
 
-To run Jekyll with Bundler to matche the GitHub Pages build server
-> bundle exec jekyll serve
+To run Jekyll with Bundler to match the GitHub Pages build server
+
+```
+bundle exec jekyll serve
+```
+
+### Github Pages Dependencies
+
+https://pages.github.com/versions/
