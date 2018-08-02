@@ -103,7 +103,7 @@ body {
 }
 
 .navbar-toggle span.ion-navicon {
-    font-size:30px; 
+    font-size:30px;
     color:#3498db;
 }
 
@@ -241,7 +241,7 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-    background: url(../img/header_bg.jpg) no-repeat center top;
+    background: url(../img/header_bg1.svg) no-repeat center top;
     margin-top: -50px;
     padding-top:100px;
     text-align:center;
@@ -249,7 +249,7 @@ a:after {
     background-position: center center;
     min-height: 600px;
     width: 100%;
-    
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -263,8 +263,8 @@ a:after {
 
 #headerwrap h1 {
     color:#333;
-    margin-top: 110px;
-    padding-bottom: 30px;
+    margin-top: 80px;
+    padding-bottom: 20px;
     letter-spacing: 8px;
     font-size: 50px;
     font-weight: bold;
@@ -276,10 +276,10 @@ a:after {
     font-size: 30px;
     font-weight: 400;
     text-align: center;
-    line-height: 40px;
+    /* line-height: 40px; */
     letter-spacing: 3px;
     margin-left: 15px;
-    text-shadow: 1px 1px 1px #000;
+    /* text-shadow: 1px 1px 1px #000; */
 }
 
 #headerwrap p {
@@ -389,7 +389,7 @@ a:after {
     background-size: cover;
 
     background-attachment: relative;
-    
+
     text-align: center;
 }
 
@@ -404,7 +404,7 @@ a:after {
     font-size: 25px;
 }
 
-.textdivider-light p, 
+.textdivider-light p,
 .textdivider-light h1 {
     color: #333;
 }
@@ -553,7 +553,7 @@ h3.post-title {
     font-weight: 700;
     text-align: left;
     letter-spacing: 2px;
-    
+
 }
 
 .grid figcaption a {
@@ -628,7 +628,7 @@ h3.post-title {
     background: #2b2b2b;
     padding-right: 0px;
     padding-left: 0px;
-    
+
 }
 
 .blog-bg h4 {
@@ -676,4 +676,3 @@ h3.post-title {
         line-height: 22px;
     }
 }
-
