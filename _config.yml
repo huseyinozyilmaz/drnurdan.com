@@ -4,7 +4,7 @@ name: Nur
 surname: Ozyilmaz
 fulltitle: Dr Nur Ozyilmaz
 appname: DrNur
-email: info@drnur.co.uk
+email: contact@drnur.co.uk
 tel: 020 7706 1997
 address: "58 South Molton Street<br>London<br>W1K 5SL"
 map: "https://goo.gl/maps/7YkcAt5nm9z"
@@ -16,7 +16,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://drnur.co.uk" # the base hostname & protocol for your site
 image: "https://drnur.co.uk/assets/img/nur.jpg"
 facebook: "https://www.facebook.com/drnurozyilmaz/"
-contactaction: "https://postman.etilia.com/info@drnur.co.uk"
+contactaction: "https://postman.etilia.com/contact@drnur.co.uk"
 
 # production/development
 mode: production
