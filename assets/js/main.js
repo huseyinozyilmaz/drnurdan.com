@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var loaded = Date.now()
 
     //wow.js init
     wow = new WOW(
@@ -16,38 +17,70 @@ $(document).ready(function(){
         }
     });
 
-    /**
-    $("#contact-form input[name=fullname]").val('John Smith');
-    $("#contact-form input[name=replyto]").val('john.smith@email.com');
-    $("#contact-form textarea[name=message]").val('This is a test contact message');
-    **/
+    function renderMessages (messages) {
+        var list = ''
+        $.each(messages, function(index, value){
+            list = list + '<br><small>' + value + '</small>'
+        })
+        return list
+    }
 
     $("#contact-form").submit(function (e) {
         e.preventDefault();
     });
-    
+
     $("#btn-submit").click(function (e) {
-        var action = $("#contact-form").attr("action");
-        var email  = action.substring(action.lastIndexOf("/") + 1, action.length);
-        $.post( action, $( "#contact-form" ).serialize(), function(result) {
-            if(result && result.success) {
-                swal({
-                    title: "Thanks",   
-                    text: "Your message has been successfully sent. I will try to respond as soon as I review your message. All information received will always remain confidential.",
-                    type: "success",   
-                    confirmButtonText: "OK"
-                });
-                $("#contact-form").trigger("reset");
-            }
-            else {
-                swal({
-                    title: "Oops...",
-                    text: "Something went wrong!<br>Your message cannot be sent. Possible reason: <i>" + result.messages[0] + "</i><br><br>You can always send an email to <a href='mailto:" + email + "'>" + email +"</a>",
-                    type: "error",
-                    html: true,
-                    confirmButtonText: "OK"
-                });
-            }
-        },'json');
+        $('#signclick').val('ctrl-' + Math.random().toString(36).substr(2, 5) + '-ctrl')
     });
+
+    $('#contact-form').validate({
+      rules: {
+        message: {
+          required: true
+        },
+        replyto: {
+          required: true,
+          email: true
+        },
+        fullname: {
+          required: true
+        }
+      },
+      submitHandler: function(form) {
+        $form = $(form)
+        $('#signtime').val(Date.now() - loaded)
+        var action = $form.attr('action')
+        var formarray = $form.serializeArray()
+        var json = {}
+        $.each(formarray, function() {
+          json[this.name] = this.value || ''
+        })
+        $.post(action, json, function(response, status) {
+          if (status === 'success' && response.success) {
+            swal({
+              title: 'Thank you!',
+              content: {
+                element: 'p',
+                attributes: {
+                  innerHTML: 'Your message has been successfully sent. I will try to respond as soon as I review your message. All information received will always remain confidential.',
+                }
+              },
+              icon: 'success',
+            })
+            $form.trigger('reset')
+          } else {
+            swal({
+              title: 'Oops...',
+              content: {
+                element: 'div',
+                attributes: {
+                  innerHTML: '<p>Something went wrong! Possible reason(s): ' + renderMessages(response.messages) + '</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
+                }
+              },
+              icon: 'error',
+            })
+          }
+        })
+      }
+    })
 });

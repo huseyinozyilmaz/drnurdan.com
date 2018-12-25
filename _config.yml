@@ -16,7 +16,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://drnur.co.uk" # the base hostname & protocol for your site
 image: "https://drnur.co.uk/assets/img/nur.jpg"
 facebook: "https://www.facebook.com/drnurozyilmaz/"
-contactaction: "https://postman.etilia.com/contact@drnur.co.uk"
+contactaction: "https://postman.etilia.com/d17c7c2c-5259-4318-8ce9-1c2f2fa62d35"
 
 # production/development
 mode: production
