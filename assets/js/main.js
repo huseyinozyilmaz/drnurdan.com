@@ -25,10 +25,6 @@ $(document).ready(function(){
         return list
     }
 
-    $("#contact-form").submit(function (e) {
-        e.preventDefault();
-    });
-
     $("#btn-submit").click(function (e) {
         $('#signclick').val('ctrl-' + Math.random().toString(36).substr(2, 5) + '-ctrl')
     });
