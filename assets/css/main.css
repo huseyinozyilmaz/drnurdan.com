@@ -496,7 +496,9 @@ a:after {
     width: 30px;
     padding-right: 12px;
 }
-
+form#contact-form label {
+  font-weight: normal;
+}
 
 /* ==========================================================================
    News & Articles

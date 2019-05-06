@@ -149,30 +149,21 @@ layout: default
         <div class="col-lg-4">
             <h3>Contact Me</h3>
             <p>
-                <form id="contact-form" class="form-horizontal" role="form" action="{{ site.contactaction }}" method="POST">
+                <form id="contact-form" role="form" action="{{ site.contactaction }}" method="POST">
                     <div class="form-group">
-                        <label for="message" class="col-lg-4 control-label"></label>
-                        <div class="col-lg-10">
-                            <textarea class="form-control" id="message" name="message" required placeholder="Your Message" style="min-height:72px;"></textarea>
-                        </div>
+                        <label for="message">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" required placeholder="Please type your message" style="min-height:72px;"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="replyto" class="col-lg-4 control-label"></label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="replyto" required name="replyto" placeholder="Email">
-                        </div>
+                        <label for="replyto">Your Email</label>
+                        <input type="email" class="form-control" id="replyto" required name="replyto" placeholder="Email address">
                     </div>
                     <div class="form-group">
-                        <label for="fullname" class="col-lg-4 control-label"></label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="fullname" required name="fullname" placeholder="Your Name">
-                        </div>
+                        <label for="fullname" class="control-label">Your Name</label>
+                        <input type="text" class="form-control" id="fullname" required name="fullname" placeholder="Your Name">
                     </div>
-
                     <div class="form-group">
-                        <div class="col-lg-10">
-                            <button id="btn-submit" type="submit" class="btn btn-success">Send</button>
-                        </div>
+                        <button id="btn-submit" type="submit" class="btn btn-success">Send</button>
                     </div>
                     <input class="form-control" id="signtime" name="signtime" type="hidden">
                     <input class="form-control" id="signclick" name="signclick" type="hidden">
