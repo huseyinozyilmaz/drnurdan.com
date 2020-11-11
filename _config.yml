@@ -8,9 +8,10 @@ email: contact@drnur.co.uk
 tel: 07568 265217
 address: "58 South Molton Street<br>London<br>W1K 5SL"
 map: "https://goo.gl/maps/7YkcAt5nm9z"
-description: Dr Nur Ozyilmaz is an experienced, UK trained, paediatric consultant who has worked in some of the most renowned London hospitals, including Kings College Hospital, Great Ormond Street, and St Thomas’ Hospital.
-jobtitle: Paediatrician<br>&<br>Integrative Health Specialist
+description: Dr Nur Ozyilmaz is an experienced, UK trained, integrative health consultant who has worked in some of the most renowned London hospitals, including Kings College Hospital, Great Ormond Street, and St Thomas’ Hospital.
+jobtitle: Integrative Health Consultant
 qualifications: CONSULTANT MD MRCPCH
+qualification: MD
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://drnur.co.uk" # the base hostname & protocol for your site

@@ -8,15 +8,18 @@ layout: default
         <h1>
             <span itemprop="honorificPrefix">{{site.title}} </span>
             <span itemprop="givenName">{{site.name}} </span>
-            <span itemprop="familyName">{{site.surname}}</span>
+            <span itemprop="familyName">{{site.surname}}, </span>
+            <span itemprop="award">{{site.qualification}}</span>
         </h1>
         <h2 class="animated wow zoomIn" itemprop="jobTitle">{{site.jobtitle}}</h2>
-        <p itemprop="award">{{site.qualifications}}</p>
         <p style="font-size:30px;margin:0"><span class="ion-ios-home-outline"></p>
         <p>
             <a href="{{site.map}}" itemprop="workLocation">{{site.address}}</a><br>
-            <span itemprop="telephone">{{site.tel}}</span><br>
-            <a href="mailto:{{ site.email }}" itemprop="email">{{ site.email }}</a>
+        </p>
+        <p>To make an appointment please contact:<br>Dr. Nur's PA, Ms Martha Alleje</p> 
+        <p>
+            <a href="mailto:{{ site.email }}" itemprop="email">{{ site.email }}</a><br>
+            <span itemprop="telephone">{{site.tel}}</span>
         </p>
     </header>
 </div><!-- /headerwrap -->
@@ -24,19 +27,13 @@ layout: default
 <!-- ==== GREYWRAP ==== -->
 <div id="greywrap">
     <div class="row">
-        <div class="col-lg-4 callout animated wow zoomIn">
+        <div class="col-lg-6 callout animated wow zoomIn">
             <span class="icon ion-shuffle"></span>
             <h2>Multi-disciplinary</h2>
             <p>Developed a multi-disciplinary, holistic approach that uses Western medicine, traditional and laser acupuncture, functional medicine, advanced bioregulatory therapy, nutritional and herbal remedies</p>
         </div>
 
-        <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".2s">
-            <span class="icon ion-radio-waves"></span>
-            <h2>Bioregulation Therapy</h2>
-            <p>Offers comprehensive, effective, non-invasive and safe energy therapies that help the body rebalance its systems with the body's own oscillations by using the latest technology</p>
-        </div>
-
-        <div class="col-lg-4 callout animated wow zoomIn" data-wow-delay=".4s">
+        <div class="col-lg-6 callout animated wow zoomIn" data-wow-delay=".4s">
             <span class="icon ion-heart"></span>
             <h2>Nutrition</h2>
             <p>Carries out detailed individual nutritional assessments, advices and supports her patients in their transition to a more balanced and tailored nutritional plan</p>
@@ -70,30 +67,8 @@ layout: default
     </div><!-- container -->
 </section><!-- section -->
 
-
-<!-- ==== BRT ==== -->
-<div class="container" id="brt">
-    <div class="row white">
-        <h1 class="centered">Bioregulation Therapy</h1>
-        <h3 class="centered">An innovative approach to health and wellbeing</h3>
-        <hr><br>
-        <div class="col-lg-offset-2 col-lg-8">
-            {% include bioresonance.html %}
-        </div>
-    </div>
-</div><!-- BRT container -->
-
-
-<!-- ==== SECTION DIVIDER2 -->
-<section class="section-divider textdivider divider2">
-    <div class="container diet" id="nutrition">
-        <h1>Optimise your nutrition for vibrant health</h1>
-        <hr>
-    </div>
-</section>
-
 <!-- ==== Nutrition ==== -->
-<div class="container">
+<div class="container" id="nutrition">
     <div class="row white">
         <h1 class="centered">Nutrition</h2>
         <hr><br>
@@ -103,10 +78,10 @@ layout: default
     </div>
 </div><!-- Nutrition container -->
 
-<!-- ==== SECTION DIVIDER4 ==== -->
-<section class="section-divider textdivider divider4">
-    <div class="container">
-        <h1>HEALTY KIDS, HAPPY FAMILIES</h1>
+<!-- ==== SECTION DIVIDER2 -->
+<section class="section-divider textdivider divider2">
+    <div class="container diet">
+        <h1>Optimise your nutrition for vibrant health</h1>
         <hr>
     </div>
 </section>
