@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    var loaded = Date.now()
-
     //wow.js init
     wow = new WOW(
         {
@@ -17,42 +15,34 @@ $(document).ready(function(){
         }
     });
 
-    function renderMessages (messages) {
-        var list = ''
-        $.each(messages, function(index, value){
-            list = list + '<br><small>' + value + '</small>'
-        })
-        return list
+    function renderErrorMessage (response) {
+      return `<br><small>${response.message}</small>`
     }
-
-    $("#btn-submit").click(function (e) {
-        $('#signclick').val('ctrl-' + Math.random().toString(36).substr(2, 5) + '-ctrl')
-    });
 
     $('#contact-form').validate({
       rules: {
         message: {
           required: true
         },
-        replyto: {
+        replyTo: {
           required: true,
           email: true
         },
-        fullname: {
+        fullName: {
           required: true
         }
       },
       submitHandler: function(form) {
         $form = $(form)
-        $('#signtime').val(Date.now() - loaded)
-        var action = $form.attr('action')
-        var formarray = $form.serializeArray()
-        var json = {}
+        const action = $form.attr('action')
+        const formarray = $form.serializeArray()
+        let request = {}
         $.each(formarray, function() {
-          json[this.name] = this.value || ''
+          request[this.name] = this.value || ''
         })
-        $.post(action, json, function(response, status) {
-          if (status === 'success' && response.success) {
+        document.getElementById("btn-submit").disabled = true
+        $.post(action, JSON.stringify(request), function(response, status) {
+          if (status === 'success') {
             swal({
               title: 'Thank you!',
               content: {
@@ -64,18 +54,35 @@ $(document).ready(function(){
               icon: 'success',
             })
             $form.trigger('reset')
+          }
+        })
+        .fail((xhr, status, error) => {
+          if (xhr.status === 500) {
+            swal({
+              title: 'Oops...',
+              content: {
+                element: 'div',
+                attributes: {
+                  innerHTML: '<p>Something went wrong!</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
+                }
+              },
+              icon: 'error',
+            })
           } else {
             swal({
               title: 'Oops...',
               content: {
                 element: 'div',
                 attributes: {
-                  innerHTML: '<p>Something went wrong! Possible reason(s): ' + renderMessages(response.messages) + '</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
+                  innerHTML: '<p>Something went wrong! Possible reason(s): ' + renderErrorMessage(xhr.responseJSON) + '</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
                 }
               },
               icon: 'error',
             })
           }
+        })
+        .always(function() {
+          document.getElementById("btn-submit").disabled = false
         })
       }
     })
