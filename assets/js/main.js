@@ -41,47 +41,50 @@ $(document).ready(function(){
           request[this.name] = this.value || ''
         })
         document.getElementById("btn-submit").disabled = true
-        $.post(action, JSON.stringify(request), function(response, status) {
-          if (status === 'success') {
-            swal({
-              title: 'Thank you!',
-              content: {
-                element: 'p',
-                attributes: {
-                  innerHTML: 'Your message has been successfully sent. I will try to respond as soon as I review your message. All information received will always remain confidential.',
-                }
-              },
-              icon: 'success',
-            })
-            $form.trigger('reset')
+        fetch(action, {
+          method: "POST",
+          body: JSON.stringify(request),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
           }
         })
-        .fail((xhr, status, error) => {
-          if (xhr.status === 500) {
-            swal({
-              title: 'Oops...',
-              content: {
-                element: 'div',
-                attributes: {
-                  innerHTML: '<p>Something went wrong!</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
-                }
-              },
-              icon: 'error',
-            })
-          } else {
-            swal({
-              title: 'Oops...',
-              content: {
-                element: 'div',
-                attributes: {
-                  innerHTML: '<p>Something went wrong! Possible reason(s): ' + renderErrorMessage(xhr.responseJSON) + '</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
-                }
-              },
-              icon: 'error',
-            })
+        .then((response) => {
+          if (response.status === 404) {
+            throw new Error('Cannot find the endpoint to send the message')
           }
+          if (response.status === 500) {
+            throw new Error('Failed to send the message due to error returned by the email provider')
+          }
+          return response.json()
         })
-        .always(function() {
+        .then((json) =>  {
+          if (json.error) {
+            throw new Error(json.message)
+          }
+          swal({
+            title: 'Thank you!',
+            content: {
+              element: 'p',
+              attributes: {
+                innerHTML: 'Your message has been successfully sent. I will try to respond as soon as I review your message. All information received will always remain confidential.',
+              }
+            },
+            icon: 'success',
+          })
+          $form.trigger('reset')
+          document.getElementById("btn-submit").disabled = false
+        })
+        .catch(err => {
+          swal({
+            title: 'Oops...',
+            content: {
+              element: 'div',
+              attributes: {
+                innerHTML: '<p>Something went wrong!</p><p>You can always send an email to <a href="mailto:contact@drnur.co.uk">contact@drnur.co.uk</a></p>',
+              }
+            },
+            icon: 'error',
+          })
           document.getElementById("btn-submit").disabled = false
         })
       }
